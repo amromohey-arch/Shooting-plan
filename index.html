@@ -15,11 +15,15 @@
 ```
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
-        color: #e0e0e0;
+        background: #000000 !important;
+        color: #ffffff !important;
         line-height: 1.6;
         min-height: 100vh;
         padding: 20px;
+    }
+    
+    html {
+        background: #000000 !important;
     }
 
     .container {
@@ -45,7 +49,7 @@
 
     .subtitle {
         font-size: 1em;
-        color: #9ca3af;
+        color: #cccccc !important;
         text-transform: uppercase;
         letter-spacing: 2px;
     }
@@ -59,16 +63,16 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: #64b5f6;
+        color: #64b5f6 !important;
         margin-bottom: 20px;
         padding-bottom: 10px;
-        border-bottom: 2px solid rgba(100, 181, 246, 0.3);
+        border-bottom: 2px solid rgba(100, 181, 246, 0.4) !important;
     }
 
     .location-card {
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.08) !important;
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(100, 181, 246, 0.2);
+        border: 1px solid rgba(100, 181, 246, 0.3) !important;
         border-radius: 12px;
         padding: 24px;
         margin-bottom: 16px;
@@ -76,8 +80,8 @@
     }
 
     .location-card:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(100, 181, 246, 0.4);
+        background: rgba(255, 255, 255, 0.12) !important;
+        border-color: rgba(100, 181, 246, 0.5) !important;
         transform: translateY(-2px);
     }
 
@@ -100,7 +104,7 @@
         font-size: 1.4em;
         font-weight: 700;
         margin-bottom: 12px;
-        color: #ffffff;
+        color: #ffffff !important;
     }
 
     .info-grid {
@@ -125,18 +129,19 @@
     }
 
     .info-value {
-        color: #e0e0e0;
+        color: #ffffff !important;
         font-size: 1em;
     }
 
     .shot-description {
-        background: rgba(100, 181, 246, 0.1);
-        border-left: 3px solid #64b5f6;
+        background: rgba(100, 181, 246, 0.15) !important;
+        border-left: 3px solid #64b5f6 !important;
         padding: 12px;
         border-radius: 6px;
         margin-bottom: 16px;
         font-size: 0.95em;
         line-height: 1.5;
+        color: #ffffff !important;
     }
 
     .map-button {
@@ -183,21 +188,21 @@
         gap: 12px;
         margin-bottom: 40px;
         padding: 20px;
-        background: rgba(100, 181, 246, 0.1);
-        border: 1px solid rgba(100, 181, 246, 0.2);
+        background: rgba(100, 181, 246, 0.15) !important;
+        border: 1px solid rgba(100, 181, 246, 0.3) !important;
         border-radius: 12px;
         text-align: center;
     }
 
     .stat-item h3 {
-        color: #64b5f6;
+        color: #64b5f6 !important;
         font-size: 2em;
         margin-bottom: 4px;
     }
 
     .stat-item p {
         font-size: 0.8em;
-        color: #9ca3af;
+        color: #cccccc !important;
         text-transform: uppercase;
         letter-spacing: 1px;
     }
