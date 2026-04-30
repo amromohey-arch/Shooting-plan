@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whole Night - Shoot Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        color: #e0e0e0;
+        line-height: 1.6;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-top: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, #ffffff 0%, #b0b0ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .day-section {
+        margin-bottom: 50px;
+    }
+
+    .day-header {
+        font-size: 1.3em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #64b5f6;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(100, 181, 246, 0.3);
+    }
+
+    .location-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(100, 181, 246, 0.2);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .location-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(100, 181, 246, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .location-number {
+        display: inline-block;
+        background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+        color: #0a0e27;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.9em;
+        margin-bottom: 12px;
+    }
+
+    .location-name {
+        font-size: 1.4em;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #ffffff;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    .info-block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-label {
+        font-size: 0.75em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #64b5f6;
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    .info-value {
+        color: #e0e0e0;
+        font-size: 1em;
+    }
+
+    .shot-description {
+        background: rgba(100, 181, 246, 0.1);
+        border-left: 3px solid #64b5f6;
+        padding: 12px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+
+    .map-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+        color: #0a0e27;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9em;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .map-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(100, 181, 246, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 1.8em;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .location-card {
+            padding: 16px;
+        }
+
+        body {
+            padding: 16px;
+        }
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 40px;
+        padding: 20px;
+        background: rgba(100, 181, 246, 0.1);
+        border: 1px solid rgba(100, 181, 246, 0.2);
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .stat-item h3 {
+        color: #64b5f6;
+        font-size: 2em;
+        margin-bottom: 4px;
+    }
+
+    .stat-item p {
+        font-size: 0.8em;
+        color: #9ca3af;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+        .stats {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WHOLE NIGHT</h1>
+            <p class="subtitle">Music Video — Shoot Plan</p>
+        </header>
+
+```
+    <div class="stats">
+        <div class="stat-item">
+            <h3>2</h3>
+            <p>Shoot Days</p>
+        </div>
+        <div class="stat-item">
+            <h3>10</h3>
+            <p>Locations</p>
+        </div>
+        <div class="stat-item">
+            <h3>2</h3>
+            <p>Talents</p>
+        </div>
+    </div>
+
+    <!-- DAY 1 -->
+    <div class="day-section">
+        <div class="day-header">📅 Day 1 — Friday, May 1st</div>
+
+        <!-- Location 1 -->
+        <div class="location-card">
+            <div class="location-number">1</div>
+            <div class="location-name">Drummoyne Swimming Club</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">1 Henley Marine Dr, Drummoyne NSW 2132</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">7:00 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Crew call, vehicle load-out, and production brief. No recording at this location.
+            </div>
+            <a href="https://maps.app.goo.gl/AsCujv4nsnDVgFTL8" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 2 -->
+        <div class="location-card">
+            <div class="location-number">2</div>
+            <div class="location-name">Iron Cove Bridge</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">Iron Cove, Sydney NSW 2000</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">8:15 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> General shot of the car on movement. Nostalgic mood. Camera mounted on another vehicle. 2 takes planned.
+            </div>
+            <a href="https://maps.app.goo.gl/oZ2XcR8kZzKWVoAr6" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 3 -->
+        <div class="location-card">
+            <div class="location-number">3</div>
+            <div class="location-name">Inside Car Shots (North Sydney)</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">2 Fig Tree La, North Sydney NSW 2060</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">9:00 PM – 11:00 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Multiple handheld camera shots inside the car. Close-ups of their connection, hands touching, hair in wind (slow motion), interaction with city lights. 6–9 shots planned.
+            </div>
+            <a href="https://maps.app.goo.gl/51Wicwo6GHyM9gkJ9" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 4 -->
+        <div class="location-card">
+            <div class="location-number">4</div>
+            <div class="location-name">North Sydney Oval</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">2 Fig Tree La, North Sydney NSW 2060</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">11:00 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Camera rigged to hood of car. Symmetrical shot from interior with variation of moods. Driving Walker Street and Miller Street.
+            </div>
+            <a href="https://maps.app.goo.gl/Kfs4RfzkVZzhQQWq6" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 5 -->
+        <div class="location-card">
+            <div class="location-number">5</div>
+            <div class="location-name">Burwood Plaza</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">42 Railway Parade, Burwood NSW 2134</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">11:45 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Camera rig mounted on exterior, pointing inside at both talents. Driving Burwood Road back and forth.
+            </div>
+            <a href="https://maps.app.goo.gl/p98AXdcWfFthbkp77" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 6 -->
+        <div class="location-card">
+            <div class="location-number">6</div>
+            <div class="location-name">Parramatta (Prince Alfred Square)</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">353D Church St, Parramatta NSW 2150</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">1:30 AM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Exterior suction mount on car pointing at Fadi (solo). Medium-close up showing variety of facial expressions and moods.
+            </div>
+            <a href="https://maps.app.goo.gl/QPrAyNPFJHahVVESA" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 7 -->
+        <div class="location-card">
+            <div class="location-number">7</div>
+            <div class="location-name">Balls Head Reserve (Sunrise)</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">3 Balls Head Rd, Waverton NSW 2060</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">5:00 AM – 6:00 AM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Final shot of Day 1. Talent experiencing sunrise. Medium shot with background, general shot. Handheld with subtle shake. Moment of plenitude.
+            </div>
+            <a href="https://maps.app.goo.gl/SUb2PwqVDsHbCKxF8" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+    </div>
+
+    <!-- DAY 2 -->
+    <div class="day-section">
+        <div class="day-header">📅 Day 2 — Saturday, May 2nd</div>
+
+        <!-- Location 8 -->
+        <div class="location-card">
+            <div class="location-number">8</div>
+            <div class="location-name">La Perouse (Boatshed)</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">1609 Anzac Parade, La Perouse NSW 2036</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">4:30 PM – 6:00 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Full performance of Fadi. Two takes (medium shot + general shot). Sun setting in background. Handheld camera with subtle movement following performance.
+            </div>
+            <a href="https://maps.app.goo.gl/zwZgHoxSApVQKv8V7" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 9 -->
+        <div class="location-card">
+            <div class="location-number">9</div>
+            <div class="location-name">Rose Bay</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">6-16 Dumaresq Rd, Rose Bay NSW 2029</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">4:30 PM – 7:30 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Full performance with two talents. Artsy shots between talent. Multiple POVs: general, close-ups, talent interacting. ~5 different shot angles around the car. Handheld lighting.
+            </div>
+            <a href="https://maps.app.goo.gl/efGsFpVcjx3PjL9k8" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+
+        <!-- Location 10 -->
+        <div class="location-card">
+            <div class="location-number">10</div>
+            <div class="location-name">Sydney CBD (Pyrmont Bridge, Barangaroo, Opera House)</div>
+            <div class="info-grid">
+                <div class="info-block">
+                    <span class="info-label">📍 Location</span>
+                    <span class="info-value">Various CBD Locations, Sydney NSW 2000</span>
+                </div>
+                <div class="info-block">
+                    <span class="info-label">⏰ Time</span>
+                    <span class="info-value">9:00 PM – 11:00 PM</span>
+                </div>
+            </div>
+            <div class="shot-description">
+                <strong>Shot:</strong> Talent interaction across three iconic locations. Close-ups (Pyrmont Bridge), general shot with aggressive gimbal movement (Barangaroo), talent interacting (Opera House). Handheld with gimbal and tripod setups.
+            </div>
+            <a href="https://maps.app.goo.gl/7BtrFQdrHpoCPNUJ7" target="_blank" class="map-button">📍 View on Maps</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(100, 181, 246, 0.2); color: #9ca3af; font-size: 0.85em;">
+        <p>618 MEDIA | Production with Purpose</p>
+        <p style="margin-top: 8px;">Fadi Moubayed — "Whole Night" Music Video | April–May 2026</p>
+    </footer>
+</div>
+```
+
+</body>
+</html>
